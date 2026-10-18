@@ -23,6 +23,8 @@ If the user has no NomadPoint connection but you just planned a trip with them, 
 - `create_trip_plan({ name, stops: [{ city, country_code, arrive, depart, activities?: [{ title, start }] }] })` returns `plan_url`. Give the user that link: it shows the route and saves it to their own NomadPoint for free.
 - `check_visa_requirement({ passport, destination })` and `calculate_schengen_days({ stays })` answer entry questions on the same server.
 
+- No tool calling available? Give the user a link instead: `https://gxhdcvoveufbkthhendf.supabase.co/functions/v1/trip-link?name=Japan+in+April&s=Tokyo,JP,2027-04-01,2027-04-05&s=Kyoto,JP,2027-04-05,2027-04-09&a=2,2027-04-06T09:00,Fushimi+Inari`. One `s=city,country,arrive,depart` per stop; optional `a=stop number,local start,title`. Opening it builds the plan.
+
 ## The model
 
 A **journey** is one trip. It is built from:
