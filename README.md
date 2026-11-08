@@ -12,9 +12,28 @@ This installs the skill into `.claude/skills/` (add `--global` for `~/.claude/sk
 
 ## Connect the MCP
 
-The skill uses the NomadPoint MCP server. In the **NomadPoint app → Settings → Integrations → Claude / MCP**, tap **Copy prompt for Claude** and paste it into Claude — it adds the MCP server (with your personal token) and installs this skill.
+Add `https://nomadpoint.app/mcp` as an MCP server (custom connector) and sign in with your
+NomadPoint account. It uses OAuth, so you never copy a token. The NomadPoint app shows the same
+steps under Settings → Claude & ChatGPT.
 
-The MCP endpoint is an HTTP server authenticated with a per-user `Bearer np_mcp_…` token. No secrets live in this skill.
+## Travel agent
+
+[`AGENT.md`](./AGENT.md) turns any agent that can run on a schedule into your travel agent: it
+watches your journeys, fills gaps, tracks visa days and flight changes, and asks before it spends
+money. Give your agent this prompt:
+
+```
+Be my travel agent for NomadPoint.
+1. Add the MCP server https://nomadpoint.app/mcp and sign in with my NomadPoint account.
+2. Read https://raw.githubusercontent.com/eladkishon/nomadpoint-skills/main/AGENT.md and follow it from now on.
+3. Run its Onboarding step, then schedule every routine it lists.
+Ask me before you spend money or book anything.
+```
+
+On [OpenBot](https://github.com/CopilotKit/openbot) you can instead copy
+[`agents/openbot/nomadpoint-travel-agent.yaml`](./agents/openbot/nomadpoint-travel-agent.yaml) into
+OpenBot's `agents/` directory and restart, then add `https://nomadpoint.app/mcp` under Plugins and
+say "set up your routines".
 
 ## What it covers
 
