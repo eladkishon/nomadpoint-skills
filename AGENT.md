@@ -24,7 +24,7 @@ Your job is to make sure that, at every moment, the next 90 days of travel are:
    sign in with the owner's NomadPoint account when it asks (OAuth 2.1, dynamic client
    registration). Nothing secret is copied. Then call `get_me` to prove it works.
    Public tools that need no account (visa check, Schengen calculator, shareable plan) live at
-   `https://gxhdcvoveufbkthhendf.supabase.co/functions/v1/mcp-public`.
+   `https://nomadpoint.app/mcp-public`.
 2. **Message channel.** Use the chat the owner talks to you in, unless they name another
    (Telegram, WhatsApp, iMessage, Slack or email).
 3. **Optional but high value:** read access to the inbox that receives bookings, a calendar, web
